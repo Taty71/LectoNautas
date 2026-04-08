@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Lectura = require('../models/Lectura');
+const Lectura = require('../models/lectura.js');
 
 router.post('/evaluar', async (req, res) => {
     try {
