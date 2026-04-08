@@ -295,7 +295,7 @@ input:focus, select:focus {
 }
 
 #emoji-gigante { margin-bottom: 1rem; animation: bounce 2s infinite; }
-.emoji-img { height: 100px; width: auto; object-fit: contain; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.15)); }
+.emoji-img { height: 150px; width: auto; object-fit: contain; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.15)); }
 #mensaje-resultado { font-size: 1.5rem; margin-bottom: 1.5rem; }
 
 .btn-nuevo {
