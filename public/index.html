@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Lectonautas en Acción!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-bubbles">
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+        <div class="bubble bubble4"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><img src="./recursos/genteAs.png" alt="astron"> ¡Lectonautas! <img src="./recursos/cohete.png" alt="cohete"></h1>
+            <p>Descubre tu súper velocidad leyendo en tiempo real</p>
+        </header>
+
+        <form id="lecturaForm">
+            <div class="form-group">
+                <label for="estudiante"><img src="./recursos/astronauta.png" alt="estudiante"> Nombre del Lectonauta:</label>
+                <input type="text" id="estudiante" name="estudiante" placeholder="Escribe tu nombre aquí..." required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="escuela"><img src="./recursos/colegio.png" alt="escuela">Escuela:</label>
+                    <input type="text" id="escuela" name="escuela" placeholder="Nombre escuela">
+                </div>
+                <div class="form-group">
+                    <label for="grado"><img src="./recursos//salon-de-clases.png" alt="grado">Grado:</label>
+                    <input type="text" id="grado" name="grado" placeholder="Ej: 5to">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="division"><img src="./recursos/alfabeto.png" alt="division"> División:</label>
+                    <input type="text" id="division" name="division" placeholder="Ej: B">
+                </div>
+                <div class="form-group">
+                    <label for="turno"><img src="./recursos/tarde.png" alt="turno"> Turno:</label>
+                    <select id="turno" name="turno">
+                        <option value="Mañana">Mañana</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Doble">Doble Jornada</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mic-container text-center">
+                <div id="temporizador" class="temporizador">01:00</div>
+                <div class="contador-palabras">Palabras detectadas: <span id="palabrasContadas">0</span></div>
+                
+                <!-- Campo invisible donde se mandarán las ppm al server -->
+                <input type="hidden" id="ppm" name="ppm" value="0">
+                
+                <div class="controles-mic">
+                    <button type="button" id="btn-iniciar-mic" class="btn-mic iniciar">🎙️ Iniciar (60s)</button>
+                    <button type="button" id="btn-detener-mic" class="btn-mic detener oculto">⏹️ Terminar Antes</button>
+                    <button type="button" id="btn-procesando" class="btn-mic procesando oculto" disabled>⏳ Calculando...</button>
+                </div>
+                <p id="mic-status" class="mic-status">Presiona iniciar y comienza a leer</p>
+                <div class="texto-escuchado-container">
+                    <p id="texto-escuchado" class="texto-escuchado">...</p>
+                </div>
+            </div>
+        </form>
+
+        <div id="resultado" class="resultado-card oculto">
+            <div class="semaforo-box">
+                <div class="luz luz-rojo" id="luz-rojo"></div>
+                <div class="luz luz-amarillo" id="luz-amarillo"></div>
+                <div class="luz luz-verde" id="luz-verde"></div>
+            </div>
+            <div class="mensaje-contenedor">
+                <div id="emoji-gigante"></div>
+                <h2 id="mensaje-resultado"></h2>
+            </div>
+            <button id="btn-nuevo" class="btn-nuevo">Comenzar nueva misión 🔄</button>
+        </div>
+    </div>
+
+    <!-- Librería para el efecto confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
