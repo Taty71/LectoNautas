@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('luz-verde').classList.add('active-verde');
         }
         
-        emojiGigante.textContent = result.emoticon;
+        emojiGigante.innerHTML = result.emoticon;
         mensajeResultado.textContent = result.mensaje;
 
         if (result.color === 'verde') triggerConfetti();

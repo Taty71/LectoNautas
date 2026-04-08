@@ -13,11 +13,11 @@ router.post('/evaluar', async (req, res) => {
         // 2. Determinar lógica de feedback
         let feedback = {};
         if (ppm > 90) {
-            feedback = { color: 'verde', emoticon: '🌟', mensaje: '¡Lectura fluida e increíble!' };
+            feedback = { color: 'verde', emoticon: '<img src="./recursos/cinco-estrellas.png" alt="5 estrellas" class="emoji-img">', mensaje: '¡Lectura fluida e increíble!' };
         } else if (ppm >= 50) {
-            feedback = { color: 'amarillo', emoticon: '👍', mensaje: 'Vas por buen camino, ¡sigue practicando!' };
+            feedback = { color: 'amarillo', emoticon: '<img src="./recursos/como.png" alt="Pulgar arriba" class="emoji-img">', mensaje: 'Vas por buen camino, ¡sigue practicando!' };
         } else {
-            feedback = { color: 'rojo', emoticon: '💪', mensaje: '¡No te rindas! Mañana lo harás mejor.' };
+            feedback = { color: 'rojo', emoticon: '<img src="./recursos/musculo.png" alt="Músculo" class="emoji-img">', mensaje: '¡No te rindas! Mañana lo harás mejor.' };
         }
 
         // 3. Responder al frontend
