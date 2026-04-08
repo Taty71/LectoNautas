@@ -92,7 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
     btnIniciar.addEventListener('click', () => {
         const estudiante = document.getElementById('estudiante').value;
         if (!estudiante) {
-            alert('¡Oye Lectonauta! Necesitamos saber tu nombre para encender la nave.');
+            Swal.fire({
+                title: '¡Falta 1 paso!',
+                text: 'Necesitamos saber tu nombre de Lectonauta para encender la nave. 🚀',
+                icon: 'warning',
+                confirmButtonColor: '#ff758c',
+                confirmButtonText: '¡Anotado!'
+            });
             return;
         }
 
@@ -191,12 +197,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (result.success) {
                 mostrarResultado(result);
             } else {
-                alert('¡Oops! Algo salió mal procesando tus datos espaciales.');
+                Swal.fire({
+                    title: '¡Oops!',
+                    text: 'Algo salió mal procesando tus datos espaciales. 🛸',
+                    icon: 'error',
+                    confirmButtonColor: '#2bb5e3'
+                });
                 reiniciarUI();
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('¡Oops! Error de conexión con la base espacial.');
+            Swal.fire({
+                title: 'Desconexión 🔌',
+                text: 'No pudimos contactar con la base espacial. Revisa si hay internet.',
+                icon: 'error',
+                confirmButtonColor: '#2bb5e3'
+            });
             reiniciarUI();
         }
     }
